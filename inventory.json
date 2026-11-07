@@ -1,0 +1,398 @@
+{
+  "summary": {
+    "totalFiles": 94,
+    "totalBytes": 6276142
+  },
+  "stats": {
+    "html": [
+      {
+        "file": "index.html",
+        "size": 2695
+      }
+    ],
+    "css": [
+      {
+        "file": "css/img.css",
+        "size": 1764
+      },
+      {
+        "file": "css/style.css",
+        "size": 73585
+      }
+    ],
+    "js": [
+      {
+        "file": "js/art.js",
+        "size": 60077
+      },
+      {
+        "file": "js/audio.js",
+        "size": 15912
+      },
+      {
+        "file": "js/backup.js",
+        "size": 4121
+      },
+      {
+        "file": "js/clean.js",
+        "size": 3868
+      },
+      {
+        "file": "js/cloud.js",
+        "size": 9216
+      },
+      {
+        "file": "js/data.js",
+        "size": 50988
+      },
+      {
+        "file": "js/economy.js",
+        "size": 4322
+      },
+      {
+        "file": "js/errors.js",
+        "size": 5702
+      },
+      {
+        "file": "js/fx.js",
+        "size": 12379
+      },
+      {
+        "file": "js/gift.js",
+        "size": 10560
+      },
+      {
+        "file": "js/journey.js",
+        "size": 70363
+      },
+      {
+        "file": "js/joyup.js",
+        "size": 4069
+      },
+      {
+        "file": "js/lb.js",
+        "size": 8410
+      },
+      {
+        "file": "js/main.js",
+        "size": 3547
+      },
+      {
+        "file": "js/native.js",
+        "size": 2856
+      },
+      {
+        "file": "js/net.js",
+        "size": 5751
+      },
+      {
+        "file": "js/orient.js",
+        "size": 4012
+      },
+      {
+        "file": "js/progress.js",
+        "size": 10367
+      },
+      {
+        "file": "js/regs.js",
+        "size": 11258
+      },
+      {
+        "file": "js/reviews.js",
+        "size": 8590
+      },
+      {
+        "file": "js/state.js",
+        "size": 70426
+      },
+      {
+        "file": "js/story.js",
+        "size": 39898
+      },
+      {
+        "file": "js/text.js",
+        "size": 58365
+      },
+      {
+        "file": "js/tour.js",
+        "size": 11511
+      },
+      {
+        "file": "js/ui/account.js",
+        "size": 12537
+      },
+      {
+        "file": "js/ui/ach.js",
+        "size": 6594
+      },
+      {
+        "file": "js/ui/auth.js",
+        "size": 3971
+      },
+      {
+        "file": "js/ui/crew.js",
+        "size": 17771
+      },
+      {
+        "file": "js/ui/drama.js",
+        "size": 65581
+      },
+      {
+        "file": "js/ui/gift.js",
+        "size": 15373
+      },
+      {
+        "file": "js/ui/journey.js",
+        "size": 27621
+      },
+      {
+        "file": "js/ui/life.js",
+        "size": 18933
+      },
+      {
+        "file": "js/ui/onboard.js",
+        "size": 19795
+      },
+      {
+        "file": "js/ui/outer.js",
+        "size": 44594
+      },
+      {
+        "file": "js/ui/prep.js",
+        "size": 79838
+      },
+      {
+        "file": "js/ui/rank.js",
+        "size": 8960
+      },
+      {
+        "file": "js/ui/regs.js",
+        "size": 7711
+      },
+      {
+        "file": "js/ui/report.js",
+        "size": 11523
+      },
+      {
+        "file": "js/ui/sell.js",
+        "size": 182372
+      },
+      {
+        "file": "js/ui/shell.js",
+        "size": 23395
+      },
+      {
+        "file": "js/ui/shop.js",
+        "size": 9057
+      },
+      {
+        "file": "js/ui/splash.js",
+        "size": 8424
+      },
+      {
+        "file": "js/ui/star.js",
+        "size": 10224
+      },
+      {
+        "file": "js/ui/story.js",
+        "size": 18723
+      },
+      {
+        "file": "js/ui/street.js",
+        "size": 3938
+      },
+      {
+        "file": "js/ui/tour.js",
+        "size": 20166
+      }
+    ],
+    "images": [
+      {
+        "file": "icons/apple-touch-icon.png",
+        "size": 2252
+      },
+      {
+        "file": "icons/icon-192.png",
+        "size": 2861
+      },
+      {
+        "file": "icons/icon-512.png",
+        "size": 7614
+      },
+      {
+        "file": "icons/icon-maskable-512.png",
+        "size": 5429
+      },
+      {
+        "file": "img/cust_anh2.webp",
+        "size": 6100
+      },
+      {
+        "file": "img/cust_anh3.webp",
+        "size": 5252
+      },
+      {
+        "file": "img/cust_ba2.webp",
+        "size": 6408
+      },
+      {
+        "file": "img/cust_boy.webp",
+        "size": 7174
+      },
+      {
+        "file": "img/cust_boy2.webp",
+        "size": 7290
+      },
+      {
+        "file": "img/cust_boy3.webp",
+        "size": 6600
+      },
+      {
+        "file": "img/cust_chi2.webp",
+        "size": 6394
+      },
+      {
+        "file": "img/cust_chi3.webp",
+        "size": 7006
+      },
+      {
+        "file": "img/cust_chu2.webp",
+        "size": 6590
+      },
+      {
+        "file": "img/cust_co.webp",
+        "size": 7268
+      },
+      {
+        "file": "img/cust_girl.webp",
+        "size": 6546
+      },
+      {
+        "file": "img/cust_girl2.webp",
+        "size": 5118
+      },
+      {
+        "file": "img/cust_girl3.webp",
+        "size": 7332
+      },
+      {
+        "file": "img/cust_grandma.webp",
+        "size": 5966
+      },
+      {
+        "file": "img/cust_office.webp",
+        "size": 6412
+      },
+      {
+        "file": "img/cust_ong.webp",
+        "size": 6234
+      },
+      {
+        "file": "img/cust_uncle.webp",
+        "size": 7002
+      },
+      {
+        "file": "img/cust_woman.webp",
+        "size": 5760
+      },
+      {
+        "file": "img/pet_cat.webp",
+        "size": 5376
+      },
+      {
+        "file": "img/pet_dog.webp",
+        "size": 7216
+      },
+      {
+        "file": "img/pet_ham.webp",
+        "size": 7538
+      },
+      {
+        "file": "img/staff_buoi.svg",
+        "size": 998
+      },
+      {
+        "file": "img/staff_chom.webp",
+        "size": 5516
+      },
+      {
+        "file": "img/staff_hau.webp",
+        "size": 6836
+      },
+      {
+        "file": "img/staff_man.webp",
+        "size": 5838
+      },
+      {
+        "file": "img/staff_mit.webp",
+        "size": 5696
+      },
+      {
+        "file": "img/staff_na.webp",
+        "size": 6032
+      },
+      {
+        "file": "img/staff_oi.svg",
+        "size": 817
+      },
+      {
+        "file": "img/star_khang.svg",
+        "size": 758
+      },
+      {
+        "file": "img/star_meo.svg",
+        "size": 911
+      },
+      {
+        "file": "img/star_phong.svg",
+        "size": 846
+      },
+      {
+        "file": "img/star_rap.svg",
+        "size": 1057
+      },
+      {
+        "file": "img/star_tra.svg",
+        "size": 669
+      },
+      {
+        "file": "img/star_vyvy.svg",
+        "size": 873
+      }
+    ],
+    "audio": [
+      {
+        "file": "music/carefree.mp3",
+        "size": 1231220
+      },
+      {
+        "file": "music/easy-lemon.mp3",
+        "size": 758665
+      },
+      {
+        "file": "music/life-of-riley.mp3",
+        "size": 1412562
+      },
+      {
+        "file": "music/merry-go.mp3",
+        "size": 722929
+      },
+      {
+        "file": "music/monkeys-spinning-monkeys.mp3",
+        "size": 750828
+      }
+    ],
+    "manifest": [
+      {
+        "file": "manifest.webmanifest",
+        "size": 796
+      }
+    ],
+    "other": [
+      {
+        "file": "AGENTS.md",
+        "size": 25844
+      }
+    ]
+  }
+}

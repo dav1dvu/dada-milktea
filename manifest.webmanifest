@@ -1,0 +1,19 @@
+{
+  "name": "Dada Milktea",
+  "short_name": "Dada Trà Sữa",
+  "lang": "vi",
+  "description": "Game quản lý tiệm trà sữa DADA: nhập nguyên liệu, pha đúng đơn, lên đời quán.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "portrait",
+  "background_color": "#3E2A22",
+  "theme_color": "#3E2A22",
+  "categories": ["games", "casual"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<g stroke="#5a3a2a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M36 22l6-14 8 10 14-14 14 14 8-10 6 14z" fill="#FFD64D"/>
+<path d="M36 22q28 6 56 0" fill="none" stroke="#C9971C" stroke-width="2"/>
+<circle cx="64" cy="10" r="3" fill="#FF6F9C"/><circle cx="42" cy="12" r="2" fill="#7FD1FF"/><circle cx="86" cy="12" r="2" fill="#7FD1FF"/>
+<path d="M30 92l66 36h-20L22 100z" fill="#FFF3F7"/>
+<text transform="rotate(28 58 110)" x="58" y="113" font-size="8" font-weight="900" fill="#E4557A" stroke="none" text-anchor="middle" font-family="sans-serif">HOA HẬU</text>
+</g></svg>

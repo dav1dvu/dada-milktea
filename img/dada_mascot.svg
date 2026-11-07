@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%" aria-label="Bé Trân Châu DADA Mascot">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="mTeaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D97724"/>
+      <stop offset="35%" stop-color="#B25916"/>
+      <stop offset="100%" stop-color="#3E2A22"/>
+    </linearGradient>
+    <linearGradient id="mCreamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FFF3E8"/>
+      <stop offset="100%" stop-color="#F7EBE1"/>
+    </linearGradient>
+    <linearGradient id="mGoldPearl" x1="25%" y1="20%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#C67D00"/>
+    </linearGradient>
+    <linearGradient id="mStrawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF8A80"/>
+      <stop offset="50%" stop-color="#FFA49C"/>
+      <stop offset="100%" stop-color="#E57373"/>
+    </linearGradient>
+    <linearGradient id="mGoldCrown" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="50%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="mDropShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#3E2A22" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Clip Path for Cup Body -->
+    <clipPath id="mCupClip">
+      <path d="M95,140 L305,140 L282,342 Q280,364 260,364 L140,364 Q120,364 118,342 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Mascot Ambient Ground Shadow -->
+  <ellipse cx="200" cy="442" rx="95" ry="15" fill="#3E2A22" opacity="0.15"/>
+
+  <!-- Straw (Back segment) -->
+  <g class="straw" transform="rotate(14 230 70)">
+    <rect x="220" y="24" width="24" height="135" rx="12" fill="url(#mStrawGrad)" stroke="#3E2A22" stroke-width="3.5"/>
+    <!-- Straw stripes -->
+    <path d="M220,44 L244,54 M220,70 L244,80 M220,96 L244,106 M220,122 L244,132" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+  </g>
+
+  <!-- Main Mascot Body -->
+  <g filter="url(#mDropShadow)">
+    <!-- Cup Liquid Fill -->
+    <g clip-path="url(#mCupClip)">
+      <!-- Liquid Background Base -->
+      <rect x="80" y="130" width="240" height="250" fill="url(#mTeaGrad)"/>
+
+      <!-- Cream Wave -->
+      <path d="M80,165 Q135,180 190,168 T320,170 L320,130 L80,130 Z" fill="url(#mCreamGrad)"/>
+      <path d="M80,168 Q140,152 200,165 T320,158 L320,130 L80,130 Z" fill="#FFFFFF" opacity="0.55"/>
+
+      <!-- Golden Pearls -->
+      <!-- Bottom Layer -->
+      <circle cx="145" cy="336" r="16" fill="url(#mGoldPearl)"/>
+      <circle cx="175" cy="342" r="17" fill="url(#mGoldPearl)"/>
+      <circle cx="205" cy="339" r="16.5" fill="url(#mGoldPearl)"/>
+      <circle cx="235" cy="343" r="17" fill="url(#mGoldPearl)"/>
+      <circle cx="258" cy="336" r="15.5" fill="url(#mGoldPearl)"/>
+
+      <!-- Second Layer -->
+      <circle cx="130" cy="318" r="16" fill="url(#mGoldPearl)"/>
+      <circle cx="160" cy="321" r="16.5" fill="url(#mGoldPearl)"/>
+      <circle cx="190" cy="323" r="17" fill="url(#mGoldPearl)"/>
+      <circle cx="220" cy="322" r="16.5" fill="url(#mGoldPearl)"/>
+      <circle cx="250" cy="317" r="16" fill="url(#mGoldPearl)"/>
+
+      <!-- Top Floating Pearls -->
+      <circle cx="146" cy="298" r="15" fill="url(#mGoldPearl)"/>
+      <circle cx="180" cy="301" r="16" fill="url(#mGoldPearl)"/>
+      <circle cx="212" cy="300" r="15.5" fill="url(#mGoldPearl)"/>
+      <circle cx="240" cy="297" r="14.5" fill="url(#mGoldPearl)"/>
+
+      <!-- Shiny Pearl Highlights -->
+      <g fill="#FFFFFF" opacity="0.9">
+        <circle cx="140" cy="331" r="4.2"/>
+        <circle cx="170" cy="337" r="4.5"/>
+        <circle cx="200" cy="334" r="4.2"/>
+        <circle cx="230" cy="338" r="4.5"/>
+        <circle cx="125" cy="313" r="4"/>
+        <circle cx="155" cy="316" r="4.2"/>
+        <circle cx="185" cy="318" r="4.5"/>
+        <circle cx="215" cy="317" r="4.2"/>
+        <circle cx="176" cy="296" r="3.8"/>
+        <circle cx="208" cy="295" r="3.8"/>
+      </g>
+
+      <!-- Glass Reflection Highlight -->
+      <path d="M105,140 L116,335 Q120,350 128,350 L122,140 Z" fill="#FFFFFF" opacity="0.35"/>
+    </g>
+
+    <!-- Transparent Cup Outline -->
+    <path d="M95,140 L305,140 L282,342 Q280,364 260,364 L140,364 Q120,364 118,342 Z"
+          fill="none" stroke="#3E2A22" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Cup Dome Lid (Cream Cap) -->
+    <path d="M82,142 Q200,84 318,142 Z" fill="#FFFFFF" stroke="#3E2A22" stroke-width="4.5" stroke-linejoin="round"/>
+    <ellipse cx="200" cy="142" rx="122" ry="13" fill="#F7EBE1" stroke="#3E2A22" stroke-width="4.5"/>
+    <ellipse cx="200" cy="140" rx="105" ry="8" fill="#FFFFFF" opacity="0.75"/>
+
+    <!-- Little Golden Crown on Lid -->
+    <g transform="translate(0, -6)">
+      <path d="M174,86 L184,104 L200,90 L216,104 L226,86 L224,116 L176,116 Z"
+            fill="url(#mGoldCrown)" stroke="#3E2A22" stroke-width="3" stroke-linejoin="round"/>
+      <circle cx="174" cy="84" r="3" fill="#FF8A80" stroke="#3E2A22" stroke-width="1.5"/>
+      <circle cx="200" cy="87" r="3.5" fill="#81C784" stroke="#3E2A22" stroke-width="1.5"/>
+      <circle cx="226" cy="84" r="3" fill="#FF8A80" stroke="#3E2A22" stroke-width="1.5"/>
+    </g>
+
+    <!-- Chibi Cute Face -->
+    <g class="chibi-face">
+      <!-- Big Anime Sparkling Eyes -->
+      <!-- Left Eye -->
+      <ellipse cx="164" cy="225" rx="11" ry="15" fill="#3E2A22"/>
+      <ellipse cx="161" cy="219" rx="5" ry="6.5" fill="#FFFFFF"/>
+      <circle cx="168" cy="231" r="2.5" fill="#FFFFFF"/>
+      <!-- Right Eye Winking in Cheer -->
+      <ellipse cx="236" cy="225" rx="11" ry="15" fill="#3E2A22"/>
+      <ellipse cx="233" cy="219" rx="5" ry="6.5" fill="#FFFFFF"/>
+      <circle cx="240" cy="231" r="2.5" fill="#FFFFFF"/>
+
+      <!-- Rosy Cheeks -->
+      <ellipse cx="138" cy="242" rx="14" ry="8" fill="#FF8A80" opacity="0.7"/>
+      <ellipse cx="262" cy="242" rx="14" ry="8" fill="#FF8A80" opacity="0.7"/>
+
+      <!-- Happy Smile with Tongue -->
+      <path d="M187,236 Q200,254 213,236 Q200,242 187,236 Z" fill="#E53935" stroke="#3E2A22" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M193,242 Q200,250 207,242 Z" fill="#FFCDD2"/>
+    </g>
+
+    <!-- Cute Chubby Hands -->
+    <!-- Left Hand: Holding small golden tea leaf -->
+    <g>
+      <path d="M98,245 Q72,238 74,220 Q82,210 96,226" fill="#F7EBE1" stroke="#3E2A22" stroke-width="4" stroke-linecap="round"/>
+      <!-- Little Matcha Leaf in Hand -->
+      <path d="M68,214 C58,206 55,216 63,222 C71,228 76,222 68,214 Z" fill="#81C784" stroke="#3E2A22" stroke-width="2"/>
+    </g>
+    <!-- Right Hand: Waving High -->
+    <path d="M302,242 Q332,230 330,212 Q320,204 304,224" fill="#F7EBE1" stroke="#3E2A22" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Cute Little Feet / Shoes at Bottom -->
+    <g>
+      <ellipse cx="162" cy="370" rx="18" ry="10" fill="#3E2A22"/>
+      <ellipse cx="238" cy="370" rx="18" ry="10" fill="#3E2A22"/>
+      <ellipse cx="160" cy="368" rx="14" ry="6" fill="#D97724"/>
+      <ellipse cx="236" cy="368" rx="14" ry="6" fill="#D97724"/>
+    </g>
+  </g>
+
+  <!-- Name Tag Below Mascot -->
+  <g transform="translate(0, 396)">
+    <rect x="110" y="0" width="180" height="34" rx="17" fill="#3E2A22" filter="url(#mDropShadow)"/>
+    <text x="200" y="23"
+          font-family="'Baloo 2', 'Arial Rounded MT Bold', sans-serif"
+          font-weight="800"
+          font-size="16"
+          text-anchor="middle"
+          fill="#FFB300"
+          letter-spacing="0.08em">BÉ TRÂN CHÂU DADA</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+services:
+  dada-milktea:
+    build: .
+    container_name: dada-milktea-game
+    ports:
+      - "8080:80"
+    restart: unless-stopped

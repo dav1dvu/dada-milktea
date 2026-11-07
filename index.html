@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Dada Milktea - Tiệm Trà Sữa DADA</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="description" content="Dada Milktea - Game quản lý tiệm trà sữa DADA: nhập nguyên liệu tươi ngon, pha đúng công thức, chiều lòng thực khách và nâng tầm thương hiệu.">
+<meta name="theme-color" content="#3E2A22">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dada Trà Sữa">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="./">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="icon" href="./favicon.ico" sizes="any">
+<link rel="icon" href="./img/dada_logo.svg" type="image/svg+xml">
+<link rel="icon" href="./icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/img.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dada Milktea - Tiệm Trà Sữa DADA">
+<meta property="og:description" content="Dada Milktea - Game quản lý tiệm trà sữa DADA: nhập nguyên liệu tươi ngon, pha đúng công thức, chiều lòng thực khách và nâng tầm thương hiệu.">
+<meta property="og:image" content="./icons/icon-512.png">
+</head>
+<body>
+<div id="app">
+  <header id="top"></header>
+  <main id="view"></main>
+  <footer id="bottom" hidden></footer>
+  <div id="toast"></div>
+</div>
+<noscript><p style="padding:20px;color:#fff">Game cần bật JavaScript.</p></noscript>
+<script>
+// Lỗi xảy ra trước khi js/errors.js nạp xong: giữ lại để báo sau
+window.__errQ = [];
+addEventListener('error', function (e) { if (!window.__errOn) __errQ.push([String(e.message || ''), e.error && e.error.stack || '', e.filename || '']); });
+addEventListener('unhandledrejection', function (e) { var r = e.reason; if (!window.__errOn) __errQ.push([String(r && r.message || r), r && r.stack || '', '']); });
+
+// Đăng ký Service Worker cho trải nghiệm PWA và bộ nhớ đệm ngoại tuyến
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (err) {
+      console.warn('ServiceWorker registration error:', err);
+    });
+  });
+}
+</script>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

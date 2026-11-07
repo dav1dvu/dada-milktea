@@ -1,0 +1,4 @@
+# Dada Milktea - SPA Rewrites for Netlify & Cloudflare Pages
+/dada-milktea/*  /:splat  200
+/dada-milktea    /index.html  200
+/*               /index.html  200
