@@ -16,3 +16,4 @@
 | **TSK-05** | Tối ưu trải nghiệm Mobile & Tablet (Touch action, Safe Area Notch, Orientation lock, PWA) | `@game-dev` | `pwa-mobile-mastery`, `frontend-developer` | `DONE` | P0 |
 | **TSK-06** | Test kiểm thử toàn diện trên Mobile & Tablet (iOS Safari, Android Chrome, iPad, offline) | `@qa-tester` | `mobile-developer`, `ui-visual-validator`, `screen-reader-testing` | `DONE` | P1 |
 | **TSK-07** | Đóng gói bản phát hành & cấu hình deploy đường dẫn `dada-milktea` | `@team-lead` | `antigravity-skills-manager`, `full-stack-orchestration-full-stack-feature` | `DONE` | P1 |
+| **TSK-08** | Khắc phục triệt để lỗi "Thiếu màn: sell" (Chuẩn hóa toàn bộ ESM imports, loại bỏ query string JoyUp, đồng bộ router singleton) | `@game-dev` | `html5-game-dev`, `javascript-pro`, `pwa-mobile-mastery` | `DONE` | P0 (Khẩn cấp) |

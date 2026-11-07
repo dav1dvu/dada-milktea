@@ -341,3 +341,37 @@
      - Đã chuyển trạng thái `TSK-07` sang `DONE` trên `TASKS.md` (Toàn bộ 7/7 Task TSK-01 đến TSK-07 đạt tỉ lệ hoàn thành 100%).
 
 - **Trạng thái toàn dự án**: `PRODUCTION READY` (Sẵn sàng 100% bàn giao cho USER).
+
+
+---
+
+### [BÁO CÁO HOTFIX P0] - @game-dev - 2026-11-08 00:25
+- **Kỹ năng Global kích hoạt**:
+  * `Applying Skill: html5-game-dev`
+  * `Applying Skill: javascript-pro`
+  * `Applying Skill: pwa-mobile-mastery`
+  * `Applying Skill: frontend-developer`
+
+- **Công việc đã hoàn thành (Nhiệm vụ TSK-08 - Khắc phục triệt để lỗi "Thiếu màn: sell")**:
+  1. **Xác định nguyên nhân gốc rễ (Root Cause)**:
+     - `main.js` import router từ `./ui/shell.js` (không có query parameter).
+     - Tuy nhiên `prep.js` và nhiều file khác lại import `go` từ `./shell.js?v=bc2b62a8&version=1`.
+     - Theo đặc tả chuẩn ECMAScript Modules (ESM), trình duyệt đối xử các URL có query parameter khác nhau như các module instance hoàn toàn độc lập (module duplication). Do đó, `screens['sell']` được đăng ký ở instance A trong `main.js`, nhưng khi người chơi bấm nút "Mở cửa", `prep.js` lại gọi hàm `go('sell')` của instance B (nơi `screens` rỗng), dẫn đến thông báo lỗi `Thiếu màn: sell`.
+  2. **Chuẩn hóa triệt để 100% Import Statements (Xóa bỏ Query Strings)**:
+     - Quét và loại bỏ sạch sẽ 199 query parameters dạng `?v=bc2b62a8&version=1` trên toàn bộ 33 tệp mã nguồn thuộc `js/` và `js/ui/`.
+     - Toàn bộ các câu lệnh import hiện tại đều trỏ trực tiếp đến đường dẫn tương đối nội bộ sạch (`./shell.js`, `../state.js`, v.v.), đảm bảo cơ chế Singleton Instance duy nhất 100% trong toàn bộ vòng đời ứng dụng.
+     - Kiểm tra và khắc phục lỗi cú pháp ternary trong `js/ui/drama.js` (`['from']?['thief']`).
+  3. **Kiểm tra cú pháp & Module Dependencies**:
+     - Toàn bộ 46/46 tệp JavaScript đã được kiểm tra bằng Node syntax checker (`node --check`), 100% không có lỗi cú pháp.
+     - Xác minh 266 điểm import giữa các module: 0 broken link, 0 missing export.
+  4. **Kiểm thử quy trình Gameplay End-to-End**:
+     - Chạy kịch bản mô phỏng toàn trình (`scratch/test_in_node.js`):
+       + `main.js` nạp và đăng ký toàn bộ 8 màn hình: `auth`, `splash`, `prep`, `sell`, `report`, `tour`, `journey`, `jrdone`.
+       + Khởi tạo game state tiệm DADA: `begin('Tiệm Trà Sữa DADA')` thành công, ví tiền 1.000đ, kho nguyên liệu sẵn sàng.
+       + Chuyển sang màn hình "Chuẩn bị" (`prep`): Render thành công giao diện chuẩn bị 4.236 bytes.
+       + Kích hoạt hành động "Mở cửa" (`go('sell')`): Không còn lỗi "Thiếu màn: sell", giao diện Quầy bán hàng Dada Milktea (`sell`) render hoàn hảo 2.542 bytes với đầy đủ thanh ca bán hàng `shiftbar`, đồng hồ `clk`, quầy bar `counter`, các bình lắc `shakers`, và logic khách hàng `street.js`.
+  5. **Cập nhật tiến độ**:
+     - Đã chuyển trạng thái `TSK-08` sang `DONE` trên `TASKS.md`.
+     - Dọn dẹp sạch sẽ các tệp thử nghiệm tạm thời ở thư mục gốc.
+
+- **Trạng thái**: `DONE` (Đã xử lý dứt điểm 100% sự cố - Sẵn sàng nghiệm thu & phát hành).

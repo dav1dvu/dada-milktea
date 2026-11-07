@@ -388,3 +388,80 @@ Sau khi hoàn tất, bạn **bắt buộc** phải:
 3. **Bàn giao chính thức cho USER**:
    - Báo cáo tổng thể toàn bộ hành trình chuyển hóa game từ `joyup.vn/game/tiem-tra-sua-joyup` thành **Dada Milktea (`dada-milktea`)**.
    - Cung cấp bộ cấu hình deploy và hướng dẫn trải nghiệm ngay trên thiết bị di động.
+
+
+---
+
+# [CHỈ THỊ CÔNG VIỆC SỐ 06 - XỬ LÝ SỰ CỐ KHẨN CẤP] - DỰ ÁN DADA MILKTEA
+**Số hiệu chỉ thị**: DISPATCH-06  
+**Ngày ban hành**: 2026-11-07  
+**Người phát lệnh**: @team-lead (Lead AI Architect)  
+**Người nhận nhiệm vụ**: @game-dev (Mobile Web Game Engineer)  
+**Mục tiêu nhiệm vụ**: Khắc phục triệt để lỗi "Thiếu màn: sell" khi người chơi nhấn "Mở cửa", chuẩn hóa 100% ESM imports loại bỏ query parameter JoyUp, khôi phục luồng chơi bán trà sữa và đồng bộ router singleton.
+
+---
+
+### 1. VAI TRÒ CỦA BẠN (Role)
+- **Chức danh**: Kỹ sư Phát triển Game Web & Di động (Mobile Web Game Engineer).
+- **Codename trong đội**: `@game-dev`.
+- **Kỹ năng Global BẮT BUỘC công bố & áp dụng**:
+  1. `html5-game-dev`: Tái cấu trúc engine game 2D HTML5, modular ES game loops, điều phối router chuyển màn và vòng đời game.
+  2. `javascript-pro`: Master ES Modules (ESM) specification, module resolution, singleton state management và debugging runtime.
+  3. `pwa-mobile-mastery`: Đảm bảo các tương tác chạm (touch events), âm thanh web audio unlock và safe-area khi chuyển sang màn hình quầy bán hàng (sell screen).
+  4. `frontend-developer`: Tinh chỉnh layout quầy bar pha chế trà sữa, bình lắc và danh sách thực khách trên giao diện di động/tablet.
+
+---
+
+### 2. BẠN PHẢI ĐỌC TÀI LIỆU GÌ TRƯỚC KHI LÀM? (Documentation to Read)
+Trước khi tiến hành, bạn **bắt buộc phải đọc kỹ các tài liệu sau**:
+1. **Quy chuẩn điều hành**: `C:\DATA\03_Resources\tra-sua\AGENTS.md` (Mục *Mandatory Execution Protocol* và *Team Roster*).
+2. **Hướng dẫn nghiệp vụ kỹ năng**:
+   - `C:\Users\Admin\.gemini\config\skills\html5-game-dev\SKILL.md` (Cấu trúc module màn hình game HTML5 và luồng chuyển cảnh).
+   - `C:\Users\Admin\.gemini\config\skills\javascript-pro\SKILL.md` (Chuẩn ES Modules, quy tắc URL resolution trong trình duyệt).
+3. **Mã nguồn cốt lõi liên quan đến sự cố**:
+   - `C:\DATA\03_Resources\tra-sua\js\ui\shell.js`: Cơ chế `screens`, hàm `register(name, module)` và hàm `go(screenName, params)`.
+   - `C:\DATA\03_Resources\tra-sua\js\ui\prep.js`: Nơi bắt sự kiện click nút "Mở cửa" và gọi `go('sell')`.
+   - `C:\DATA\03_Resources\tra-sua\js\ui\sell.js`: Màn hình bán hàng chính (quầy bar, bình lắc shaker, đơn khách).
+   - `C:\DATA\03_Resources\tra-sua\js\main.js`: File khởi tạo và đăng ký router `register('sell', sellUI)`.
+4. **Task Board dự án**:
+   - `C:\DATA\03_Resources\tra-sua\.messages\TASKS.md` (Task `TSK-08`).
+
+---
+
+### 3. BẠN PHẢI LÀM GÌ? (Actionable Tasks & Scope of Work)
+
+Thực hiện giải quyết sự cố theo 4 bước bài bản:
+
+#### Bước 1: Chuẩn hóa 100% đường dẫn import (Loại bỏ query string `?v=...`)
+- **Nguyên nhân gốc rễ**: Trình duyệt coi `'./shell.js'` và `'./shell.js?v=bc2b62a8&version=1'` là **2 module instance hoàn toàn độc lập**. Khi `main.js` gọi `register()`, nó ghi vào instance sạch. Nhưng khi `prep.js` gọi `go('sell')`, nó gọi từ instance có query string vốn rỗng ruột (`screens = {}`), dẫn tới `Thiếu màn: sell`.
+- **Hành động**: Quét sạch toàn bộ các tệp `.js` trong thư mục `js/` và `js/ui/`, loại bỏ triệt để chuỗi `?v=bc2b62a8&version=1` (và bất kỳ query parameter nào) ở tất cả các câu lệnh `import ... from '...'`.
+- Đảm bảo 100% các file đều import theo đường dẫn tương đối chuẩn xác (`./shell.js`, `../state.js`, v.v.) để chia sẻ chung duy nhất một module singleton trong bộ nhớ trình duyệt.
+
+#### Bước 2: Kiểm tra và làm sạch `sell.js` cùng các module phụ trợ
+- Kiểm tra toàn bộ các hàm xuất nhập khẩu của `js/ui/sell.js`: đảm bảo `export function render(...)` và `export function weather(...)` hoạt động không bị ngoại lệ (runtime exception) khi được gọi.
+- Kiểm tra các submodule được `sell.js` import (`drama.js`, `outer.js`, `street.js`, `crew.js`, `story.js`, `star.js`, `regs.js`): đảm bảo không file nào bị lỗi import hoặc phụ thuộc vào domain cũ của JoyUp.
+
+#### Bước 3: Kiểm thử toàn trình luồng chơi (End-to-End Game Flow Test)
+- Khởi chạy web trên môi trường local HTTP server.
+- Thực hiện đầy đủ kịch bản người dùng:
+  1. Vào game qua Splash screen.
+  2. Tại màn hình "Chuẩn bị" (`prep`): Thao tác bấm "Nhập hàng" nguyên liệu trà, sữa, trân châu.
+  3. Bấm nút "Mở cửa": Xác nhận giao diện chuyển mượt mà sang màn hình "Bán hàng" (`sell`), hiển thị đầy đủ quầy bar Dada Milktea, bình lắc trà sữa, hàng đợi thực khách tới gọi món.
+  4. Thực hiện thử nghiệm pha 1 ly trà sữa, giao cho khách và thu tiền để đảm bảo vòng lặp kinh tế (`state.js`) và hiệu ứng âm thanh (`audio.js`) hoạt động hoàn hảo.
+
+#### Bước 4: Đóng gói và chuẩn bị cập nhật lên Vercel / Production
+- Sau khi kiểm tra local hoàn tất, cập nhật mã nguồn để USER có thể deploy bản sửa lỗi lên `dada-milktea.vercel.app`.
+
+---
+
+### 4. BÁO CÁO TEAM LEAD CÁI GÌ? (Deliverables & Reporting Protocol)
+Sau khi khắc phục xong, bạn **bắt buộc** phải lập biên bản báo cáo gửi cho `@team-lead`:
+1. **Kỹ năng Global đã áp dụng**: Nêu rõ `html5-game-dev`, `javascript-pro`, `pwa-mobile-mastery`.
+2. **Báo cáo chi tiết kỹ thuật**:
+   - Danh sách các tệp `.js` đã được chuẩn hóa loại bỏ query string `?v=...`.
+   - Giải thích cơ chế singleton module sau khi sửa.
+3. **Minh chứng kiểm thử (Verification Evidence)**:
+   - Kết quả kiểm thử trên trình duyệt (console log sạch 0 lỗi, giao diện quầy bar `sell` hiển thị đầy đủ, không còn xuất hiện `Thiếu màn: sell`).
+4. **Cập nhật Task Board & Standup**:
+   - Cập nhật `TSK-08` thành `DONE` trong `.messages/TASKS.md`.
+   - Ghi nhật ký vào `.messages/STANDUP.md` theo mẫu chuẩn.
